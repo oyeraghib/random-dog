@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+  <fragment
+      android:id="@+id/homeFragment"
+      android:name="com.example.randomdoggen.app.ui.fragments.HomeFragment"
+      android:label="fragment_home"
+      tools:layout="@layout/fragment_home" >
+    <action
+        android:id="@+id/action_homeFragment_to_generateDogFragment"
+        app:destination="@id/generateDogFragment" />
+    <action
+        android:id="@+id/action_homeFragment_to_generatedDogsFragment"
+        app:destination="@id/generatedDogsFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/generateDogFragment"
+      android:name="com.example.randomdoggen.app.ui.fragments.GenerateDogFragment"
+      android:label="fragment_generate_dog"
+      tools:layout="@layout/fragment_generate_dog" />
+  <fragment
+      android:id="@+id/generatedDogsFragment"
+      android:name="com.example.randomdoggen.app.ui.fragments.GeneratedDogsFragment"
+      android:label="fragment_generated_dogs"
+      tools:layout="@layout/fragment_generated_dogs" />
+</navigation>
