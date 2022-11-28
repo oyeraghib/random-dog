@@ -1,16 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".app.ui.fragments.HomeFragment"
     >
 
-  <!-- TODO: Update blank fragment layout -->
   <TextView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:text="@string/hello_blank_fragment"
+      android:id="@+id/tvTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Random Dog Generator!"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_marginTop="164dp"
+      android:textSize="22sp"
+      android:textColor="@color/black"
+      android:textStyle="bold"
       />
 
-</FrameLayout>
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cvGenerateDog"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+      android:layout_marginTop="220dp"
+      app:layout_constraintStart_toStartOf="@+id/tvTitle"
+      app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+      android:paddingHorizontal="4dp"
+      >
+
+    <TextView
+        android:id="@+id/tvGenerateDog"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="16dp"
+        android:text="Generate Dogs!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_btn"
+        android:textColor="@color/white"
+        />
+
+  </androidx.cardview.widget.CardView>
+
+  <androidx.cardview.widget.CardView
+      android:layout_marginTop="8dp"
+      android:id="@+id/cvGeneratedDogs"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingHorizontal="4dp"
+      app:layout_constraintTop_toBottomOf="@+id/cvGenerateDog"
+      app:layout_constraintStart_toStartOf="@+id/cvGenerateDog"
+      app:layout_constraintEnd_toEndOf="@+id/cvGenerateDog"
+      >
+
+    <TextView
+        android:id="@+id/tvGeneratedDogs"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="16dp"
+        android:text="My Recently Generated Dogs!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_btn"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteY="458dp"
+        tools:layout_editor_absoluteX="140dp"
+        />
+
+  </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
