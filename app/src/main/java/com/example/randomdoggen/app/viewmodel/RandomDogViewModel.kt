@@ -31,8 +31,8 @@ class RandomDogViewModel(private val repository: RandomDogRepo) : ViewModel() {
     //Read all dogs
     val readAllDogs: LiveData<List<String>> = repository.readAllDogs()
 
-  /*  //Delete all dogs
-    val deleteAllDogs = viewModelScope.launch(Dispatchers.IO) {
+    //Delete all dogs
+    fun deleteAllDogs() = viewModelScope.launch(Dispatchers.IO) {
         repository.deleteDogs()
-    }*/
+    }
 }

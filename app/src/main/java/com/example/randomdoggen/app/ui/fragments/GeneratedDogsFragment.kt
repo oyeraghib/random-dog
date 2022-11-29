@@ -50,6 +50,10 @@ class GeneratedDogsFragment : Fragment() {
             Log.d("List Adapter", "List: $it")
             myAdapter.getDogs(it)
         }
+
+        binding.tvClearDogs.setOnClickListener {
+            randomDogViewModel.deleteAllDogs()
+        }
     }
 
     override fun onDestroyView() {

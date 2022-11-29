@@ -21,5 +21,5 @@ class RandomDogRepo(private val randomDogClient: RandomDogClient, private val do
     fun readAllDogs(): LiveData<List<String>> = dogsDao.readDogs()
 
     //Delete all dogs
-//    suspend fun deleteDogs() = dogsDao.deleteAllDogs()
+    suspend fun deleteDogs() = dogsDao.deleteAllDogs()
 }

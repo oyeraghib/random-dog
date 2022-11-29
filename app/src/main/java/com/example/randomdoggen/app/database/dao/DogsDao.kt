@@ -19,6 +19,6 @@ interface DogsDao {
     fun readDogs(): LiveData<List<String>>
 
     //Delete all dogs
-/*    @Query("delete from dogs_entity")
-    suspend fun deleteAllDogs()*/
+    @Query("delete from dogs_entity")
+    suspend fun deleteAllDogs()
 }
