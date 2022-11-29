@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".app.ui.fragments.GeneratedDogsFragment"
+    android:background="@color/white"
+    android:orientation="vertical"
     >
 
-  <!-- TODO: Update blank fragment layout -->
-  <TextView
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/rvDogsCachedList"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:text="@string/hello_blank_fragment"
+      android:layout_marginTop="16dp"
+      android:layout_marginHorizontal="4dp"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
       />
 
-</FrameLayout>
+ <!-- <TextView
+      android:id="@+id/tvClearDogs"
+      android:paddingVertical="4dp"
+      android:paddingHorizontal="24dp"
+      android:text="Clear Dogs!"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@drawable/custom_btn"
+      android:textColor="@color/white"
+      android:layout_marginTop="24dp"
+      android:layout_gravity="center"
+      />-->
+
+</LinearLayout>
