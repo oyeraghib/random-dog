@@ -10,15 +10,16 @@
     >
 
   <androidx.recyclerview.widget.RecyclerView
+      android:scrollbars="horizontal"
       android:id="@+id/rvDogsCachedList"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_marginTop="16dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
       android:layout_marginHorizontal="4dp"
-      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      tools:listitem="@layout/list_item_recycler_view"
       />
 
- <!-- <TextView
+  <TextView
       android:id="@+id/tvClearDogs"
       android:paddingVertical="4dp"
       android:paddingHorizontal="24dp"
@@ -29,6 +30,6 @@
       android:textColor="@color/white"
       android:layout_marginTop="24dp"
       android:layout_gravity="center"
-      />-->
+      />
 
 </LinearLayout>
