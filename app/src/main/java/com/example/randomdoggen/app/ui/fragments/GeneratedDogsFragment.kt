@@ -1,11 +1,17 @@
 package com.example.randomdoggen.app.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.randomdoggen.MainApplication
 import com.example.randomdoggen.app.adapter.GeneratedDogsAdapter
+import com.example.randomdoggen.app.viewmodel.RandomDogViewModel
+import com.example.randomdoggen.app.viewmodel.ViewModelFactory
 import com.example.randomdoggen.databinding.FragmentGeneratedDogsBinding
 
 class GeneratedDogsFragment : Fragment() {
@@ -15,6 +21,11 @@ class GeneratedDogsFragment : Fragment() {
 
     //Adapter
     private lateinit var myAdapter: GeneratedDogsAdapter
+
+    //ViewModel
+    private val randomDogViewModel: RandomDogViewModel by viewModels {
+        ViewModelFactory((context?.applicationContext as MainApplication).randomDogRepo)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,13 +41,15 @@ class GeneratedDogsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.rvDogsCachedList.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
         binding.rvDogsCachedList.adapter = myAdapter
 
-        //Retrieving
-        val list = mutableListOf<String>()
-        list.add("https://images.dog.ceo/breeds/affenpinscher/n02110627_3286.jpg")
-        list.add("https://images.dog.ceo/breeds/mastiff-english/2.jpg")
-        myAdapter.getDogs(list)
+        randomDogViewModel.readAllDogs.observe(viewLifecycleOwner) {
+            Log.d("List Adapter", "List: $it")
+            myAdapter.getDogs(it)
+        }
     }
 
     override fun onDestroyView() {
