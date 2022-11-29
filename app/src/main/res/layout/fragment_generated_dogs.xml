@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".app.ui.fragments.GeneratedDogsFragment"
     android:background="@color/white"
     android:orientation="vertical"
     >
 
   <androidx.recyclerview.widget.RecyclerView
+      android:layout_marginTop="12dp"
+      android:layout_marginStart="4dp"
       android:scrollbars="horizontal"
       android:id="@+id/rvDogsCachedList"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="12dp"
-      android:layout_marginHorizontal="4dp"
-      tools:listitem="@layout/list_item_recycler_view"
-      />
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
 
+      />
   <TextView
       android:id="@+id/tvClearDogs"
       android:paddingVertical="4dp"
@@ -28,8 +30,12 @@
       android:layout_height="wrap_content"
       android:background="@drawable/custom_btn"
       android:textColor="@color/white"
-      android:layout_marginTop="24dp"
       android:layout_gravity="center"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_marginTop="336dp"
+      app:layout_constraintHorizontal_bias="0.498"
       />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
